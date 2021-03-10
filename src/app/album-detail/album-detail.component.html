@@ -1,0 +1,23 @@
+<div class="album-detail-general-container">
+  <div *ngIf="!loading">
+    <h2>Album #{{album.id}}</h2>
+
+    <div class="album-title-container">
+      <h3 class="album-title">Title: {{album.title}}</h3>
+      <button (click)="changeTitle = true" class="change-title-button">Change title</button>
+    </div>
+
+    <input *ngIf="changeTitle" [textContent]="album.title" [(ngModel)]="album.title">
+    <button *ngIf="changeTitle" (click)="updateAlbum()">Save</button>
+
+    <h4>User id: {{album.userId}}</h4>
+
+    <button class="show-photos-button">
+      <a [routerLink]="['/albums', album.id, 'photos']" class="show-photos">Show photos</a>
+    </button>
+
+    <button (click)="goBack()">Go back</button>
+  </div>
+
+  <p *ngIf="loading" class="album-detail-loading">Loading album...</p>
+</div>

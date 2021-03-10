@@ -1,0 +1,11 @@
+<div *ngIf="!loading" class="general-album-photos-detail-container">
+  <div *ngFor="let photo of photos">
+    <h2>
+      Title: {{photo.title}}
+    </h2>
+    <img src="{{photo.url}}">
+    <h3>id: {{photo.id}}</h3>
+  </div>
+</div>
+
+<h3 *ngIf="loading" class="photo-loading">Loading photo...</h3>

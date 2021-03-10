@@ -1,0 +1,26 @@
+<div class="albums-general-container">
+  <h2>Album List</h2>
+
+  <button *ngIf="!adding" (click)="adding = true">Add album</button>
+  <div *ngIf="adding" class="add-container">
+    <input type="text" [(ngModel)]="addId" placeholder="Enter id" class="input">
+    <input type="text" [(ngModel)]="userId" placeholder="Enter user id" class="input">
+    <input type="text" [(ngModel)]="title" placeholder="Enter title" class="input">
+    <button (click)="addAlbum()" class="add-button">Add</button>
+  </div>
+
+  <div *ngIf="!loading">
+    <ul class="albums-list">
+      <li *ngFor="let album of albums; let i = index" class="album-list-item">
+        <a [routerLink]="['/albums', album.id]" class="albums-item-title">
+          {{album.id}}) {{album.title}}
+        </a>
+        <button (click)="deleteAlbum(album.id)" class="delete-button">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <p *ngIf="loading">List of albums...</p>
+</div>

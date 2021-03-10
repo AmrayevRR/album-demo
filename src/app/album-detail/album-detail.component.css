@@ -1,0 +1,28 @@
+.album-detail-general-container {
+  padding-left: 20px;
+}
+
+.album-title-container {
+  display: flex;
+}
+
+.album-title {
+  margin-right: 20px;
+}
+
+.change-title-button {
+  height: 35px;
+  margin-top: 10px;
+}
+
+.show-photos {
+  color: white;
+}
+
+.show-photos-button {
+  margin-right: 20px;
+}
+
+.album-detail-loading {
+  text-align: center;
+}
